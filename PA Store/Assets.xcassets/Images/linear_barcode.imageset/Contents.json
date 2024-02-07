@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "linear_barcode_design.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

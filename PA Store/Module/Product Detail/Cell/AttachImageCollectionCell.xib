@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="AttachImageCollectionCell" customModule="HomeMedics" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="124" height="126"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="124" height="126"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1a-h4-Qxi">
+                        <rect key="frame" x="0.0" y="0.0" width="124" height="126"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E1R-TA-6dw" customClass="HMView" customModule="HomeMedics" customModuleProvider="target">
+                                <rect key="frame" x="9" y="9" width="106" height="108"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-image" translatesAutoresizingMaskIntoConstraints="NO" id="8LN-vG-Xe0">
+                                        <rect key="frame" x="0.0" y="0.0" width="106" height="108"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kC-Xq-5yv">
+                                        <rect key="frame" x="89" y="-5" width="21" height="22"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="delete_grey_icon"/>
+                                        <connections>
+                                            <action selector="didDeleteBtnTap:" destination="gTV-IL-0wX" eventType="touchUpInside" id="kwD-DR-NNS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="8LN-vG-Xe0" firstAttribute="leading" secondItem="E1R-TA-6dw" secondAttribute="leading" id="DU8-tq-SSs"/>
+                                    <constraint firstAttribute="bottom" secondItem="8LN-vG-Xe0" secondAttribute="bottom" id="cpE-CJ-lZb"/>
+                                    <constraint firstItem="2kC-Xq-5yv" firstAttribute="top" secondItem="E1R-TA-6dw" secondAttribute="top" constant="-5" id="go9-lr-oxA"/>
+                                    <constraint firstAttribute="trailing" secondItem="8LN-vG-Xe0" secondAttribute="trailing" id="jGI-Wx-Zdq"/>
+                                    <constraint firstAttribute="trailing" secondItem="2kC-Xq-5yv" secondAttribute="trailing" constant="-4" id="nzs-es-nd2"/>
+                                    <constraint firstItem="8LN-vG-Xe0" firstAttribute="top" secondItem="E1R-TA-6dw" secondAttribute="top" id="wVv-UK-1sr"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="E1R-TA-6dw" secondAttribute="bottom" constant="9" id="RvI-cg-dLX"/>
+                            <constraint firstItem="E1R-TA-6dw" firstAttribute="top" secondItem="s1a-h4-Qxi" secondAttribute="top" constant="9" id="TFW-Kk-Vps"/>
+                            <constraint firstItem="E1R-TA-6dw" firstAttribute="leading" secondItem="s1a-h4-Qxi" secondAttribute="leading" constant="9" id="cUO-5T-jdF"/>
+                            <constraint firstAttribute="trailing" secondItem="E1R-TA-6dw" secondAttribute="trailing" constant="9" id="vHe-a9-2TG"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="s1a-h4-Qxi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="P0r-WN-NmZ"/>
+                <constraint firstAttribute="trailing" secondItem="s1a-h4-Qxi" secondAttribute="trailing" id="Xoh-M8-3Nj"/>
+                <constraint firstAttribute="bottom" secondItem="s1a-h4-Qxi" secondAttribute="bottom" id="iFt-1a-Vjt"/>
+                <constraint firstItem="s1a-h4-Qxi" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="mA2-0A-lZz"/>
+            </constraints>
+            <size key="customSize" width="124" height="126"/>
+            <connections>
+                <outlet property="imgAttach" destination="8LN-vG-Xe0" id="egD-of-UbU"/>
+            </connections>
+            <point key="canvasLocation" x="-19.847328244274809" y="46.478873239436624"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="bg-image" width="1079" height="1093"/>
+        <image name="delete_grey_icon" width="21" height="21"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
