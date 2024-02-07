@@ -30,7 +30,13 @@ final class SettingPresenter {
 }
 
 extension SettingPresenter: SettingPresenterProtocol {
-
+    func gotoMultiStoreScreen(stores: [AssignedStore]) {
+        router.gotoMultiStoreScreen(stores: stores)
+    }
+    
+    func gotoLogin() {
+        router.gotoLogin()
+    }
 }
 
 extension SettingPresenter: SettingInteractorOutputProtocol {

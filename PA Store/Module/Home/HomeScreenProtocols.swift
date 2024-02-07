@@ -12,7 +12,9 @@ import Foundation
 
 // MARK: Wireframe -
 protocol HomeScreenWireframeProtocol: class {
-
+    func gotoLoginPage()
+    func gotoSetting()
+    func gotoProductDetailPage(product: GetProductResponse)
 }
 // MARK: Presenter -
 protocol HomeScreenPresenterProtocol: class {
@@ -20,18 +22,30 @@ protocol HomeScreenPresenterProtocol: class {
     var interactor: HomeScreenInteractorInputProtocol? { get set }
 
     func viewDidLoad()
+    
+    func gotoLoginPage()
+    func gotoSetting()
+    func gotoProductDetailPage(product: GetProductResponse)
+    
+    func getProductDetail(refNumber: String)
+    
 }
 
 // MARK: Interactor -
 protocol HomeScreenInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    
+    func getProductSuccess(_ product: GetProductResponse)
+    func getProductFailure(_ errorMessage: String)
 }
 
 protocol HomeScreenInteractorInputProtocol: class {
 
     var presenter: HomeScreenInteractorOutputProtocol? { get set }
 
+    func getProductDetail(refNumber: String)
+    
     /* Presenter -> Interactor */
 }
 
@@ -44,6 +58,7 @@ protocol HomeScreenViewProtocol: class {
     func showLoader()
     func hideLoader()
 
+    func showAlertView(message: String)
     func setupEnglishView()
     func setupArabicView()
 }

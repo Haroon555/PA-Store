@@ -6,3 +6,8 @@
 //
 
 import Foundation
+import Alamofire
+
+class NetworkManager{
+
+}

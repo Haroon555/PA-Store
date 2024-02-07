@@ -21,11 +21,13 @@ final class SettingRouter {
     static func createModule() -> UIViewController {
 
         // Change to get view from storyboard if not using progammatic UI
-        let view = SettingViewController(nibName: nil, bundle: nil)
+        let storyboard = getStoryBoard(.userAuthentication)
+        let view = storyboard.instantiateViewController(ofType: SettingViewController.self)
+        
         let interactor = SettingInteractor()
         let router = SettingRouter()
         let presenter = SettingPresenter(interface: view, interactor: interactor, router: router)
-
+        
         view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view
@@ -35,5 +37,13 @@ final class SettingRouter {
 }
 
 extension SettingRouter: SettingWireframeProtocol {
-
+    func gotoLogin() {
+        let vc = LoginScreenViewControllerRouter.createModule()
+        self.viewController?.navigationController?.setViewControllers([vc], animated: true)
+    }
+    
+    func gotoMultiStoreScreen(stores: [AssignedStore]) {
+        let vc = MultiStoreScreenRouter.createModule(stores: stores)
+        self.viewController?.navigationController?.setViewControllers([vc], animated: true)
+    }
 }

@@ -112,16 +112,7 @@ public extension String {
     }
     
     // MARK: - GET THE ROUND OFF VALUES
-    func getRoundOffValue(_ input: String?) -> String {
-        var roundOffValue = ""
-        if let data = input {
-            let x = data.replacingOccurrences(of: ",", with: "", options: .literal, range: nil)
-            let y = Double(round(1000 * (Double(x) ?? 0.0)) / 1000)
-            roundOffValue = String(format: "%.2f", y)
-            printNgi(roundOffValue)
-        }
-        return roundOffValue
-    }
+ 
     
     /*   public var localized: String {
      // the; translators team, they don’t deserve comments
@@ -215,16 +206,7 @@ public extension String {
         return(self.rangeOfCharacter(from: .whitespacesAndNewlines) != nil)
     }
     
-    func convertDecimalPoint() -> String {
-        var roundOffValue = ""
-        
-        let x = self.replacingOccurrences(of: ",", with: "", options: .literal, range: nil)
-        let y = Double(round(1000 * (Double(x) ?? 0.0)) / 1000)
-        roundOffValue = String(format: "%.2f", y)
-        printNgi(roundOffValue)
-        
-        return roundOffValue
-    }
+
     
 }
 public class StringClass {

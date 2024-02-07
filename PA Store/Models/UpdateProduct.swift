@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+struct UpdateProduct: Codable {
+    
+    var success: Bool?
+    var message: String?
+    
+    
+
+    enum CodingKeys: String, CodingKey {
+        case success = "success"
+        case message = "message"
+    }
+    
+}

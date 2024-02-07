@@ -5,13 +5,12 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="AttachImageCollectionCell" customModule="HomeMedics" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="AttachImageCollectionCell" customModule="PA_Store" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="124" height="126"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -21,10 +20,10 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1a-h4-Qxi">
                         <rect key="frame" x="0.0" y="0.0" width="124" height="126"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E1R-TA-6dw" customClass="HMView" customModule="HomeMedics" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E1R-TA-6dw" customClass="HMView" customModule="PA_Store" customModuleProvider="target">
                                 <rect key="frame" x="9" y="9" width="106" height="108"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-image" translatesAutoresizingMaskIntoConstraints="NO" id="8LN-vG-Xe0">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PA-Store3" translatesAutoresizingMaskIntoConstraints="NO" id="8LN-vG-Xe0">
                                         <rect key="frame" x="0.0" y="0.0" width="106" height="108"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -33,9 +32,9 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kC-Xq-5yv">
-                                        <rect key="frame" x="89" y="-5" width="21" height="22"/>
+                                        <rect key="frame" x="90" y="-10" width="20" height="22"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="delete_grey_icon"/>
+                                        <state key="normal" image="delete"/>
                                         <connections>
                                             <action selector="didDeleteBtnTap:" destination="gTV-IL-0wX" eventType="touchUpInside" id="kwD-DR-NNS"/>
                                         </connections>
@@ -45,7 +44,7 @@
                                 <constraints>
                                     <constraint firstItem="8LN-vG-Xe0" firstAttribute="leading" secondItem="E1R-TA-6dw" secondAttribute="leading" id="DU8-tq-SSs"/>
                                     <constraint firstAttribute="bottom" secondItem="8LN-vG-Xe0" secondAttribute="bottom" id="cpE-CJ-lZb"/>
-                                    <constraint firstItem="2kC-Xq-5yv" firstAttribute="top" secondItem="E1R-TA-6dw" secondAttribute="top" constant="-5" id="go9-lr-oxA"/>
+                                    <constraint firstItem="2kC-Xq-5yv" firstAttribute="top" secondItem="E1R-TA-6dw" secondAttribute="top" constant="-10" id="go9-lr-oxA"/>
                                     <constraint firstAttribute="trailing" secondItem="8LN-vG-Xe0" secondAttribute="trailing" id="jGI-Wx-Zdq"/>
                                     <constraint firstAttribute="trailing" secondItem="2kC-Xq-5yv" secondAttribute="trailing" constant="-4" id="nzs-es-nd2"/>
                                     <constraint firstItem="8LN-vG-Xe0" firstAttribute="top" secondItem="E1R-TA-6dw" secondAttribute="top" id="wVv-UK-1sr"/>
@@ -57,7 +56,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="E1R-TA-6dw" secondAttribute="bottom" constant="9" id="RvI-cg-dLX"/>
                             <constraint firstItem="E1R-TA-6dw" firstAttribute="top" secondItem="s1a-h4-Qxi" secondAttribute="top" constant="9" id="TFW-Kk-Vps"/>
@@ -82,10 +81,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="bg-image" width="1079" height="1093"/>
-        <image name="delete_grey_icon" width="21" height="21"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="PA-Store3" width="500" height="500"/>
+        <image name="delete" width="20" height="20"/>
     </resources>
 </document>

@@ -19,7 +19,7 @@ extension UIViewController {
     
     func addCustomBackButton(shouldDismissOnBack: Bool = false) {
         let selector = shouldDismissOnBack ?  #selector(barCancelButtonTapped(button:)) : #selector(backButton(sender:))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "back-arrow"), style: .plain, target: self, action: selector)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Back arrow black"), style: .plain, target: self, action: selector)
     }
 
     func addCustomCrossButton() {

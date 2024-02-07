@@ -15,25 +15,44 @@ final class HomeScreenRouter {
     weak var viewController: UIViewController?
 
     deinit {
-        printNgi("deinit HomeScreenRouter")
+        print("deinit HomeScreenRouter")
     }
 
     static func createModule() -> UIViewController {
 
         // Change to get view from storyboard if not using progammatic UI
-        let view = HomeScreenViewController(nibName: nil, bundle: nil)
+        let storyboard = getStoryBoard(.userAuthentication)
+        let view = storyboard.instantiateViewController(ofType: HomeScreenViewController.self)
+        
         let interactor = HomeScreenInteractor()
         let router = HomeScreenRouter()
         let presenter = HomeScreenPresenter(interface: view, interactor: interactor, router: router)
-
+        
         view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view
+        
 
         return view
     }
 }
 
 extension HomeScreenRouter: HomeScreenWireframeProtocol {
-
+    func gotoSetting() {
+        let vc = SettingRouter.createModule()
+        self.viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func gotoLoginPage() {
+        let vc = LoginScreenViewControllerRouter.createModule()
+        self.viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func gotoProductDetailPage(product: GetProductResponse) {
+        
+        if product.datt != nil{
+            let vc = ProductDetailScreenRouter.createModule(product: product.datt!)
+            self.viewController?.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }

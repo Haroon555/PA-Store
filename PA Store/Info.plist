@@ -4,6 +4,8 @@
 <dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
+		<key>Privacy - Face ID Usage Description</key>
+		<string>Need to use face id for login</string>
 		<key>UIApplicationSupportsMultipleScenes</key>
 		<false/>
 		<key>UISceneConfigurations</key>

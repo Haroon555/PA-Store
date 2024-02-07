@@ -12,14 +12,16 @@ import Foundation
 
 // MARK: Wireframe -
 protocol ProductDetailScreenWireframeProtocol: class {
-
+    func gotoImageCapturePage(product: DataProduct)
 }
 // MARK: Presenter -
 protocol ProductDetailScreenPresenterProtocol: class {
 
     var interactor: ProductDetailScreenInteractorInputProtocol? { get set }
-
+    var product: DataProduct? {get set}
     func viewDidLoad()
+    
+    func gotoImageCapturePage(product: DataProduct)
 }
 
 // MARK: Interactor -

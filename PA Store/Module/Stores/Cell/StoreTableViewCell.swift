@@ -8,6 +8,9 @@
 import UIKit
 
 class StoreTableViewCell: UITableViewCell {
+    @IBOutlet weak var imgLogo: UIImageView!
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblPrimaryStore: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

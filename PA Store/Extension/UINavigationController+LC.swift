@@ -28,7 +28,7 @@ extension UINavigationController {
         if #available(iOS 15.0, *) {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
-            appearance.backgroundImage = #imageLiteral(resourceName: "header")
+            appearance.backgroundColor = #colorLiteral(red: 1, green: 0.7442570329, blue: 0, alpha: 1)
             navigationBar.standardAppearance = appearance
             navigationBar.scrollEdgeAppearance = appearance
         }
@@ -37,7 +37,7 @@ extension UINavigationController {
         }
         
         navigationBar.isTranslucent = false
-        navigationBar.tintColor = .white
+        navigationBar.tintColor = .themeColor
         self.modalPresentationStyle = .fullScreen
         navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.appThemeBoldFontWithSize(20.0)]
     }

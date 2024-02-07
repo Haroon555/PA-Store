@@ -15,25 +15,27 @@ final class LoginScreenViewControllerRouter {
     weak var viewController: UIViewController?
 
     deinit {
-        printNgi("deinit LoginScreenViewControllerRouter")
+        print("deinit LoginScreenViewControllerRouter")
     }
 
     static func createModule() -> UIViewController {
-
-        // Change to get view from storyboard if not using progammatic UI
-        let view = LoginScreenViewControllerViewController(nibName: nil, bundle: nil)
+        let storyboard = getStoryBoard(.userAuthentication)
+        let view = storyboard.instantiateViewController(ofType: LoginScreenViewControllerViewController.self)
+        
         let interactor = LoginScreenViewControllerInteractor()
         let router = LoginScreenViewControllerRouter()
         let presenter = LoginScreenViewControllerPresenter(interface: view, interactor: interactor, router: router)
 
         view.presenter = presenter
         interactor.presenter = presenter
-        router.viewController = view
-
+        router.viewController = view        
         return view
     }
 }
 
 extension LoginScreenViewControllerRouter: LoginScreenViewControllerWireframeProtocol {
-
+    func gotoMultiStoreScreen(stores: [AssignedStore]) {
+        let vc = MultiStoreScreenRouter.createModule(stores: stores)
+        self.viewController?.navigationController?.setViewControllers([vc], animated: true)
+    }
 }

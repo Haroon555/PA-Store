@@ -12,7 +12,8 @@ import Foundation
 
 // MARK: Wireframe -
 protocol SettingWireframeProtocol: class {
-
+    func gotoLogin()
+    func gotoMultiStoreScreen(stores: [AssignedStore])
 }
 // MARK: Presenter -
 protocol SettingPresenterProtocol: class {
@@ -20,6 +21,8 @@ protocol SettingPresenterProtocol: class {
     var interactor: SettingInteractorInputProtocol? { get set }
 
     func viewDidLoad()
+    func gotoLogin()
+    func gotoMultiStoreScreen(stores: [AssignedStore])
 }
 
 // MARK: Interactor -

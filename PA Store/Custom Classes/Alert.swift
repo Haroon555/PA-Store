@@ -19,10 +19,10 @@ public class Alert {
 //        let error = RC.getValue(viewName: .messages(Utility.errorStringConverter2(errors: [""], errorMessage: msg) ?? .doc_delete_msg))
         
         let alertController = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title:  RC.getValue(viewName: .generic(.ok)), style: .default) { (action) in
-            
-        }
-        alertController .addAction(alertAction)
+//        let alertAction = UIAlertAction(title:  RC.getValue(viewName: .generic(.ok)), style: .default) { (action) in
+//
+//        }
+//        alertController .addAction(alertAction)
         
         Alert.showOnWindow(alertController)
     }

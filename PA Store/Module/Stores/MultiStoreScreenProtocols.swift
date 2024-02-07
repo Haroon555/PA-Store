@@ -12,7 +12,7 @@ import Foundation
 
 // MARK: Wireframe -
 protocol MultiStoreScreenWireframeProtocol: class {
-
+    func gotoHomePage()
 }
 // MARK: Presenter -
 protocol MultiStoreScreenPresenterProtocol: class {
@@ -20,6 +20,10 @@ protocol MultiStoreScreenPresenterProtocol: class {
     var interactor: MultiStoreScreenInteractorInputProtocol? { get set }
 
     func viewDidLoad()
+    
+    var stores: [AssignedStore] {get set}
+    
+    func gotoHomePage()
 }
 
 // MARK: Interactor -

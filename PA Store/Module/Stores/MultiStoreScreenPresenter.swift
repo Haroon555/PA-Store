@@ -13,7 +13,8 @@ final class MultiStoreScreenPresenter {
     weak private var view: MultiStoreScreenViewProtocol?
     var interactor: MultiStoreScreenInteractorInputProtocol?
     private let router: MultiStoreScreenWireframeProtocol
-
+    var stores = [AssignedStore]()
+    
     init(interface: MultiStoreScreenViewProtocol, interactor: MultiStoreScreenInteractorInputProtocol?, router: MultiStoreScreenWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
@@ -30,6 +31,10 @@ final class MultiStoreScreenPresenter {
 }
 
 extension MultiStoreScreenPresenter: MultiStoreScreenPresenterProtocol {
+    func gotoHomePage() {
+        router.gotoHomePage()
+    }
+    
 
 }
 

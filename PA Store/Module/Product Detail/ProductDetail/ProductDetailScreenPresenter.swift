@@ -14,6 +14,7 @@ final class ProductDetailScreenPresenter {
     var interactor: ProductDetailScreenInteractorInputProtocol?
     private let router: ProductDetailScreenWireframeProtocol
 
+    var product: DataProduct?
     init(interface: ProductDetailScreenViewProtocol, interactor: ProductDetailScreenInteractorInputProtocol?, router: ProductDetailScreenWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
@@ -30,7 +31,9 @@ final class ProductDetailScreenPresenter {
 }
 
 extension ProductDetailScreenPresenter: ProductDetailScreenPresenterProtocol {
-
+    func gotoImageCapturePage(product: DataProduct) {
+        router.gotoImageCapturePage(product: product)
+    }
 }
 
 extension ProductDetailScreenPresenter: ProductDetailScreenInteractorOutputProtocol {

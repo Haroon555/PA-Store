@@ -703,7 +703,8 @@ class MBAlertViewController: UIViewController, UITextFieldDelegate {
         //        }
 
         button.clipsToBounds = true
-        button.setBackgroundImage(UIImage(color: buttonBackgroundColor), for: UIControl.State())
+//        button.setBackgroundImage(UIImage(color: buttonBackgroundColor), for: UIControl.State())
+        
         button.tag = tag
         button.addTarget(self, action: #selector(MBAlertViewController.actionButtonTapped(_:)), for: .touchUpInside)
 

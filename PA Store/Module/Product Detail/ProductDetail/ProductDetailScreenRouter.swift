@@ -18,10 +18,12 @@ final class ProductDetailScreenRouter {
         printNgi("deinit ProductDetailScreenRouter")
     }
 
-    static func createModule() -> UIViewController {
+    static func createModule(product: DataProduct) -> UIViewController {
 
         // Change to get view from storyboard if not using progammatic UI
-        let view = ProductDetailScreenViewController(nibName: nil, bundle: nil)
+        let storyboard = getStoryBoard(.userAuthentication)
+        let view = storyboard.instantiateViewController(ofType: ProductDetailScreenViewController.self)
+        
         let interactor = ProductDetailScreenInteractor()
         let router = ProductDetailScreenRouter()
         let presenter = ProductDetailScreenPresenter(interface: view, interactor: interactor, router: router)
@@ -30,10 +32,15 @@ final class ProductDetailScreenRouter {
         interactor.presenter = presenter
         router.viewController = view
 
+        presenter.product = product
+        
         return view
     }
 }
 
 extension ProductDetailScreenRouter: ProductDetailScreenWireframeProtocol {
-
+    func gotoImageCapturePage(product: DataProduct) {
+        let vc = UploadImageScreenRouter.createModule(product: product)
+        self.viewController?.navigationController?.setViewControllers([vc], animated: true)
+    }
 }

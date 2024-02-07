@@ -14,6 +14,8 @@ final class UploadImageScreenPresenter {
     var interactor: UploadImageScreenInteractorInputProtocol?
     private let router: UploadImageScreenWireframeProtocol
 
+    var product: DataProduct?
+    
     init(interface: UploadImageScreenViewProtocol, interactor: UploadImageScreenInteractorInputProtocol?, router: UploadImageScreenWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
@@ -30,9 +32,26 @@ final class UploadImageScreenPresenter {
 }
 
 extension UploadImageScreenPresenter: UploadImageScreenPresenterProtocol {
+    func gotoHome() {
+        router.gotoHome()
+    }
+    
+    func updateProductCall(param: [String : Any]) {
+        interactor?.updateProductCall(param: param)
+    }
+    
 
 }
 
 extension UploadImageScreenPresenter: UploadImageScreenInteractorOutputProtocol {
+    func getProductSuccess() {
+        self.view?.hideLoader()
+        router.gotoHome()
+    }
+    
+    func getProductFailure(_ errorMessage: String) {
+        
+    }
+    
 
 }

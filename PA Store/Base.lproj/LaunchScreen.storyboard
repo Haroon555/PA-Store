@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,10 +14,51 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qg2-PT-JQ6">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by M3N " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9V-W9-ZfJ">
+                                        <rect key="frame" x="129.33333333333337" y="730" width="134.66666666666663" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rti-xw-YXj">
+                                        <rect key="frame" x="155.33333333333334" y="652" width="82.333333333333343" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pa_store_bg" translatesAutoresizingMaskIntoConstraints="NO" id="xuH-EI-oC5">
+                                        <rect key="frame" x="96.666666666666686" y="279.66666666666669" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="Ltr-6I-uB7"/>
+                                            <constraint firstAttribute="width" constant="200" id="c3l-id-kFa"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name="yellow_theme"/>
+                                <constraints>
+                                    <constraint firstItem="xuH-EI-oC5" firstAttribute="centerX" secondItem="Qg2-PT-JQ6" secondAttribute="centerX" id="FbT-gG-rO8"/>
+                                    <constraint firstItem="xuH-EI-oC5" firstAttribute="centerY" secondItem="Qg2-PT-JQ6" secondAttribute="centerY" id="O2o-KI-e3V"/>
+                                    <constraint firstItem="C9V-W9-ZfJ" firstAttribute="centerX" secondItem="Qg2-PT-JQ6" secondAttribute="centerX" id="bmz-QE-toN"/>
+                                    <constraint firstAttribute="bottom" secondItem="C9V-W9-ZfJ" secondAttribute="bottom" constant="8" id="hAL-ju-OQN"/>
+                                    <constraint firstItem="C9V-W9-ZfJ" firstAttribute="top" secondItem="rti-xw-YXj" secondAttribute="bottom" constant="57" id="ilQ-a6-NFm"/>
+                                    <constraint firstItem="rti-xw-YXj" firstAttribute="centerX" secondItem="Qg2-PT-JQ6" secondAttribute="centerX" id="y4v-0s-bOw"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="yellow_theme"/>
+                        <constraints>
+                            <constraint firstItem="Qg2-PT-JQ6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6p9-2a-pcI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qg2-PT-JQ6" secondAttribute="trailing" id="tCl-qI-Puv"/>
+                            <constraint firstItem="Qg2-PT-JQ6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tbn-on-jzv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Qg2-PT-JQ6" secondAttribute="bottom" id="uo8-7c-gaS"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -22,4 +66,10 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pa_store_bg" width="500" height="500"/>
+        <namedColor name="yellow_theme">
+            <color red="0.27058823529411763" green="0.18823529411764706" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
 </document>

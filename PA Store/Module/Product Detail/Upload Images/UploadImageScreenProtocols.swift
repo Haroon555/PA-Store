@@ -12,20 +12,27 @@ import Foundation
 
 // MARK: Wireframe -
 protocol UploadImageScreenWireframeProtocol: class {
-
+        func gotoHome()
 }
 // MARK: Presenter -
 protocol UploadImageScreenPresenterProtocol: class {
 
     var interactor: UploadImageScreenInteractorInputProtocol? { get set }
-
+    var product: DataProduct? {get set}
     func viewDidLoad()
+    
+    func updateProductCall(param: [String: Any])
+    
+    func gotoHome()
 }
 
 // MARK: Interactor -
 protocol UploadImageScreenInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    
+    func getProductSuccess()
+    func getProductFailure(_ errorMessage: String)
 }
 
 protocol UploadImageScreenInteractorInputProtocol: class {
@@ -33,6 +40,8 @@ protocol UploadImageScreenInteractorInputProtocol: class {
     var presenter: UploadImageScreenInteractorOutputProtocol? { get set }
 
     /* Presenter -> Interactor */
+    
+    func updateProductCall(param: [String: Any])
 }
 
 // MARK: View -

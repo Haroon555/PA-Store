@@ -8,13 +8,15 @@
 
 import UIKit
 
-class SettingViewController: BaseViewController {
+class SettingViewController: UIViewController {
 
 	var presenter: SettingPresenterProtocol?
 
     deinit {
         printNgi("deinit SettingViewController")
     }
+    
+    var stores = [AssignedStore]()
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,22 +48,32 @@ class SettingViewController: BaseViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
+    
+    @IBAction func didTapChangeStore(_ sender: Any) {
+        self.presenter?.gotoMultiStoreScreen(stores: stores)
+    }
+    @IBAction func didTapLogut(_ sender: Any) {
+        UserDefaults.standard.removeObject(forKey: "user")
+        self.presenter?.gotoLogin()
+    }
 }
 
 extension SettingViewController {
+    
+    
 }
 
 extension SettingViewController: SettingViewProtocol {
 
      func showLoader() {
         DispatchQueue.main.async {
-            self.showLoadingIndicator(withDimView: true)
+//            self.showLoadingIndicator(withDimView: true)
         }
     }
     
     func hideLoader() {
         DispatchQueue.main.async {
-            self.hideLoadingIndicator()
+//            self.hideLoadingIndicator()
         }
     }
 
@@ -72,14 +84,30 @@ extension SettingViewController: SettingViewProtocol {
     func setupArabicView() {
 
     }
+    
+    @IBAction func didTapBack(_ sender: UIButton) {
+        printNgi("@@@@@_______")
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
-extension SettingViewController: SetupViewController {
+extension SettingViewController {
     
     func setupNavigation() {
     }
     
     func setupView() {
+        let data = UserDefaults.standard.data(forKey: "stores")
+        
+        if data != nil{
+            do {
+                let decoder = JSONDecoder()
+                stores = try decoder.decode([AssignedStore].self, from: data!)
+
+            } catch {
+                // Fallback
+            }
+        }
     }
     
     func networkRequest() {

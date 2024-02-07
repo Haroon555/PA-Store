@@ -62,6 +62,14 @@ extension Bootstrapper {
     }
     
     private func showHome() {
+//        let controller = LoginScreenViewControllerRouter.createModule()
+//        let nav = UINavigationController(rootViewController: controller)
+//        nav.isNavigationBarHidden = true
+//        nav.setNavigationBarHidden(true, animated: false)
+//        UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: {}, completion: { completed in
+//        })
+//        self.window.rootViewController = nav
+        
         let controller = HomeScreenRouter.createModule()
         let nav = UINavigationController(rootViewController: controller)
         nav.isNavigationBarHidden = true

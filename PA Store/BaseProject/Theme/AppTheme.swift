@@ -76,7 +76,7 @@ enum AppTheme {
         
         let textAlignment: NSTextAlignment = textAlignment ?? NSTextAlignment.left
         
-//        titleParagraphStyle.alignment = changeTextAlignmentIfNeeded(textAlignment)
+        titleParagraphStyle.alignment = changeTextAlignmentIfNeeded(textAlignment)
         
         if underline {
             return [.font: font.getFont() as Any,
@@ -90,14 +90,16 @@ enum AppTheme {
                 .paragraphStyle: titleParagraphStyle]
     }
     
-//    private func changeTextAlignmentIfNeeded(_ alignment: NSTextAlignment) -> NSTextAlignment {
-//
-//        guard alignment == .right || alignment == .left else {
-//            return alignment
-//        }
-//
-//        return (currentLanguage() == .english ? (alignment) : (alignment == .right ? NSTextAlignment.left : NSTextAlignment.right))
-//    }
+    private func changeTextAlignmentIfNeeded(_ alignment: NSTextAlignment) -> NSTextAlignment {
+
+        guard alignment == .left || alignment == .left else {
+            return alignment
+        }
+
+        return (alignment == .left ? NSTextAlignment.left : NSTextAlignment.left)
+        
+        
+    }
 }
 
 extension AppTheme {

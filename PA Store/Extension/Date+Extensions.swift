@@ -152,89 +152,89 @@ extension Date {
     }
 }
 
-extension String {
-    
-    func convertDateFormater(date: String, inFormat: String, outFormat: String) -> String {
-        printNgi(date)
-        let dateFormatter = DateFormatter()
-        if currentLanguage() == .urdu {
-            dateFormatter.locale = Locale(identifier: "ur_PK")
-            dateFormatter.amSymbol = "AM"
-            dateFormatter.pmSymbol = "PM"
-        }
-        dateFormatter.dateFormat = inFormat
-        let date = dateFormatter.date(from: date)
-        printNgi(date)
-        dateFormatter.dateFormat = outFormat
-        printNgi(dateFormatter.string(from: date ?? Date()))
-        return  dateFormatter.string(from: date ?? Date())
-    }
-    
-    func UTCToLocal(date:String, inFormat: String = "yyyy-MM-dd HH:mm:ss", outFormat: String) -> String {
-        let dateFormatter = DateFormatter()
-        if currentLanguage() == .urdu {
-            dateFormatter.locale = Locale(identifier: "ur_PK")
-            dateFormatter.amSymbol = "AM"
-            dateFormatter.pmSymbol = "PM"
-        }
-        dateFormatter.dateFormat = inFormat
-        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
-        let dt = dateFormatter.date(from: date)
-        dateFormatter.timeZone = TimeZone.current
-        dateFormatter.dateFormat = outFormat
-        return dateFormatter.string(from: dt ?? Date())
-    }
-    
-    func UTCToLocalWithNoTime(date: String, inFormat: String = "yyyy-MM-dd HH:mm:ss", outFormat: String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en")
-        dateFormatter.dateFormat = inFormat
-        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
-        let dt = dateFormatter.date(from: date)
-        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
-        dateFormatter.dateFormat = outFormat
-        return dateFormatter.string(from: dt ?? Date())
-    }
-    
-    func convertStringToDate(inFormat: String? = "yyyy-MM-dd HH:mm:ss", outFormat: String? = "yyyy-MM-dd HH:mm:ss") -> Date? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en")
-        dateFormatter.dateFormat = outFormat
-        let date = dateFormatter.date(from: self)
-        return date
-    }
-    
-    func getDate() -> Date? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        dateFormatter.locale = Locale(identifier: "en")
-        dateFormatter.timeZone = TimeZone.current
-        return dateFormatter.date(from: self)
-    }
-    
-    func toLengthOf(length: Int) -> String {
-        if length <= 0 {
-            return self
-        } else if let to = self.index(self.startIndex, offsetBy: length, limitedBy: self.endIndex) {
-            return self.substring(from: to)
-        } else {
-            return ""
-        }
-    }
-    
-    func stringToImage(_ handler: @escaping ((UIImage?) -> Void )) {
-      if let url = URL(string: self) {
-        URLSession.shared.dataTask(with: url) { (data, _ response, _ error) in
-          if let data = data {
-            let image = UIImage(data: data)
-            handler(image)
-          }
-        }.resume()
-      }
-    }
-    
-    func toInt() -> Int {
-        return Int(self) ?? 0
-    }
-    
-}
+//extension String {
+//    
+//    func convertDateFormater(date: String, inFormat: String, outFormat: String) -> String {
+//        printNgi(date)
+//        let dateFormatter = DateFormatter()
+//        if currentLanguage() == .urdu {
+//            dateFormatter.locale = Locale(identifier: "ur_PK")
+//            dateFormatter.amSymbol = "AM"
+//            dateFormatter.pmSymbol = "PM"
+//        }
+//        dateFormatter.dateFormat = inFormat
+//        let date = dateFormatter.date(from: date)
+//        printNgi(date)
+//        dateFormatter.dateFormat = outFormat
+//        printNgi(dateFormatter.string(from: date ?? Date()))
+//        return  dateFormatter.string(from: date ?? Date())
+//    }
+//    
+//    func UTCToLocal(date:String, inFormat: String = "yyyy-MM-dd HH:mm:ss", outFormat: String) -> String {
+//        let dateFormatter = DateFormatter()
+//        if currentLanguage() == .urdu {
+//            dateFormatter.locale = Locale(identifier: "ur_PK")
+//            dateFormatter.amSymbol = "AM"
+//            dateFormatter.pmSymbol = "PM"
+//        }
+//        dateFormatter.dateFormat = inFormat
+//        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+//        let dt = dateFormatter.date(from: date)
+//        dateFormatter.timeZone = TimeZone.current
+//        dateFormatter.dateFormat = outFormat
+//        return dateFormatter.string(from: dt ?? Date())
+//    }
+//    
+//    func UTCToLocalWithNoTime(date: String, inFormat: String = "yyyy-MM-dd HH:mm:ss", outFormat: String) -> String {
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.locale = Locale(identifier: "en")
+//        dateFormatter.dateFormat = inFormat
+//        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+//        let dt = dateFormatter.date(from: date)
+//        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+//        dateFormatter.dateFormat = outFormat
+//        return dateFormatter.string(from: dt ?? Date())
+//    }
+//    
+//    func convertStringToDate(inFormat: String? = "yyyy-MM-dd HH:mm:ss", outFormat: String? = "yyyy-MM-dd HH:mm:ss") -> Date? {
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.locale = Locale(identifier: "en")
+//        dateFormatter.dateFormat = outFormat
+//        let date = dateFormatter.date(from: self)
+//        return date
+//    }
+//    
+//    func getDate() -> Date? {
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+//        dateFormatter.locale = Locale(identifier: "en")
+//        dateFormatter.timeZone = TimeZone.current
+//        return dateFormatter.date(from: self)
+//    }
+//    
+//    func toLengthOf(length: Int) -> String {
+//        if length <= 0 {
+//            return self
+//        } else if let to = self.index(self.startIndex, offsetBy: length, limitedBy: self.endIndex) {
+//            return self.substring(from: to)
+//        } else {
+//            return ""
+//        }
+//    }
+//    
+//    func stringToImage(_ handler: @escaping ((UIImage?) -> Void )) {
+//      if let url = URL(string: self) {
+//        URLSession.shared.dataTask(with: url) { (data, _ response, _ error) in
+//          if let data = data {
+//            let image = UIImage(data: data)
+//            handler(image)
+//          }
+//        }.resume()
+//      }
+//    }
+//    
+//    func toInt() -> Int {
+//        return Int(self) ?? 0
+//    }
+//    
+//}

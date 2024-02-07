@@ -18,10 +18,12 @@ final class UploadImageScreenRouter {
         printNgi("deinit UploadImageScreenRouter")
     }
 
-    static func createModule() -> UIViewController {
+    static func createModule(product: DataProduct) -> UIViewController {
 
         // Change to get view from storyboard if not using progammatic UI
-        let view = UploadImageScreenViewController(nibName: nil, bundle: nil)
+        let storyboard = getStoryBoard(.userAuthentication)
+        let view = storyboard.instantiateViewController(ofType: UploadImageScreenViewController.self)
+        
         let interactor = UploadImageScreenInteractor()
         let router = UploadImageScreenRouter()
         let presenter = UploadImageScreenPresenter(interface: view, interactor: interactor, router: router)
@@ -29,11 +31,17 @@ final class UploadImageScreenRouter {
         view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view
-
+        
+        presenter.product = product
         return view
     }
 }
 
 extension UploadImageScreenRouter: UploadImageScreenWireframeProtocol {
+    func gotoHome() {
+        let vc = HomeScreenRouter.createModule()
+        self.viewController?.navigationController?.setViewControllers([vc], animated: true)
+    }
+    
 
 }

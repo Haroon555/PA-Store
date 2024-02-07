@@ -13,25 +13,36 @@ import Foundation
 // MARK: Wireframe -
 protocol LoginScreenViewControllerWireframeProtocol: class {
 
+    func gotoMultiStoreScreen(stores: [AssignedStore])
 }
 // MARK: Presenter -
 protocol LoginScreenViewControllerPresenterProtocol: class {
 
     var interactor: LoginScreenViewControllerInteractorInputProtocol? { get set }
 
+    var userData: LoginResponse? {get set}
+    
     func viewDidLoad()
+    
+    func loginUser(params: [String: Any])
+    
+    func gotoMultiStore(stores: [AssignedStore])
+    
+    
 }
 
 // MARK: Interactor -
 protocol LoginScreenViewControllerInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func getLoginSuccess(_ userData: LoginResponse?)
+    func getLoginFailure(_ errorMessage: String)
 }
 
 protocol LoginScreenViewControllerInteractorInputProtocol: class {
 
     var presenter: LoginScreenViewControllerInteractorOutputProtocol? { get set }
-
+    func loginUser(params: [String: Any])
     /* Presenter -> Interactor */
 }
 
@@ -46,4 +57,7 @@ protocol LoginScreenViewControllerViewProtocol: class {
 
     func setupEnglishView()
     func setupArabicView()
+    
+    func showErrorMessage(_ errorMessage: String)
+    func showSuccessMessage(_ message: String)
 }

@@ -18,22 +18,28 @@ final class MultiStoreScreenRouter {
         printNgi("deinit MultiStoreScreenRouter")
     }
 
-    static func createModule() -> UIViewController {
+    static func createModule(stores: [AssignedStore]) -> UIViewController {
 
         // Change to get view from storyboard if not using progammatic UI
-        let view = MultiStoreScreenViewController(nibName: nil, bundle: nil)
+        let storyboard = getStoryBoard(.userAuthentication)
+        let view = storyboard.instantiateViewController(ofType: MultiStoreScreenViewController.self)
+        
         let interactor = MultiStoreScreenInteractor()
         let router = MultiStoreScreenRouter()
         let presenter = MultiStoreScreenPresenter(interface: view, interactor: interactor, router: router)
-
+        
         view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view
 
+        presenter.stores = stores
         return view
     }
 }
 
 extension MultiStoreScreenRouter: MultiStoreScreenWireframeProtocol {
-
+    func gotoHomePage() {
+        let vc = HomeScreenRouter.createModule()
+        self.viewController?.navigationController?.setViewControllers([vc], animated: true)
+    }
 }

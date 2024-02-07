@@ -15,13 +15,14 @@ final class LoginRouter {
     weak var viewController: UIViewController?
 
     deinit {
-        printNgi("deinit LoginRouter")
+        print("deinit LoginRouter")
     }
 
     static func createModule() -> UIViewController {
 
-        // Change to get view from storyboard if not using progammatic UI
-        let view = LoginViewController(nibName: nil, bundle: nil)
+        let storyboard = getStoryBoard(.userAuthentication)
+        let view = storyboard.instantiateViewController(ofType: LoginViewController.self)
+        
         let interactor = LoginInteractor()
         let router = LoginRouter()
         let presenter = LoginPresenter(interface: view, interactor: interactor, router: router)
@@ -35,5 +36,10 @@ final class LoginRouter {
 }
 
 extension LoginRouter: LoginWireframeProtocol {
+    func gotoHome() {
+        let controller = HomeRouter.createModule()
+        self.viewController?.navigationController?.pushViewController(controller, animated: true)
+    }
+    
 
 }

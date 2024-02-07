@@ -11,7 +11,8 @@ class NavigationView: UIView {
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var imgView: UIImageView!
-    @IBOutlet weak var btnNotification: UIButton!
+    @IBOutlet weak var btnLogout: UIButton!
+    @IBOutlet weak var btnLeft: UIButton!
     @IBOutlet weak var lblCounter: UILabel!
     
     var delegate: NavigationViewProtocol!
@@ -26,15 +27,11 @@ class NavigationView: UIView {
 
     }
     
-    @IBAction func tapOnSideMenu(_ sender: Any) {
-        delegate.didTapOnSideMenu?()
+    @IBAction func tapOnBack(_ sender: UIButton) {
+        delegate.didTapBackButton?()
     }
     
-    @IBAction func tapOnMessages(_ sender: Any) {
-        delegate.didTapOnMessage?()
-    }
-    
-    @IBAction func tapOnProfile(_ sender: UIButton) {
-        delegate.didTapOnRightBtn2?()
+    @IBAction func tapOnLogout(_ sender: UIButton) {
+        delegate.didTapSwitchOff?()
     }
 }

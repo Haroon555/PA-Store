@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeServicesCVC" id="gTV-IL-0wX" customClass="HomeServicesCVC" customModule="medIQ" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeServicesCVC" id="gTV-IL-0wX" customClass="HomeServicesCVC" customModule="PA_Store" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="305" height="214"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -21,29 +20,25 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Veh-6t-F08">
                         <rect key="frame" x="0.0" y="0.0" width="305" height="214"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" image="doctor_consultation_icon_home" translatesAutoresizingMaskIntoConstraints="NO" id="fQZ-LR-KgK">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" image="bar_code_scan" translatesAutoresizingMaskIntoConstraints="NO" id="fQZ-LR-KgK">
                                 <rect key="frame" x="125" y="10" width="55" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="55" id="Ua2-zr-YJu"/>
                                     <constraint firstAttribute="height" constant="65" id="p5x-Fk-3wC"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oTT-80-2of">
-                                <rect key="frame" x="20" y="78" width="265" height="126"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oTT-80-2of">
+                                <rect key="frame" x="20" y="85" width="265" height="42.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKc-h5-W38">
-                                        <rect key="frame" x="0.0" y="0.0" width="265" height="0.0"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="test" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKc-h5-W38">
+                                        <rect key="frame" x="0.0" y="0.0" width="265" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AIT-Zl-yXk">
-                                        <rect key="frame" x="0.0" y="0.0" width="265" height="126"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="\" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Si1-VT-dQc">
-                                        <rect key="frame" x="0.0" y="126" width="265" height="0.0"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Si1-VT-dQc">
+                                        <rect key="frame" x="0.0" y="28" width="265" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -52,12 +47,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="oTT-80-2of" firstAttribute="top" secondItem="fQZ-LR-KgK" secondAttribute="bottom" constant="3" id="6Cn-RT-j2x"/>
+                            <constraint firstItem="oTT-80-2of" firstAttribute="top" secondItem="fQZ-LR-KgK" secondAttribute="bottom" constant="10" id="6Cn-RT-j2x"/>
                             <constraint firstItem="oTT-80-2of" firstAttribute="leading" secondItem="Veh-6t-F08" secondAttribute="leading" constant="20" id="INQ-nS-Gll"/>
                             <constraint firstAttribute="trailing" secondItem="oTT-80-2of" secondAttribute="trailing" constant="20" id="IW3-Gu-cCe"/>
                             <constraint firstItem="fQZ-LR-KgK" firstAttribute="top" secondItem="Veh-6t-F08" secondAttribute="top" constant="10" id="OaU-Bb-2Lf"/>
                             <constraint firstItem="fQZ-LR-KgK" firstAttribute="centerX" secondItem="Veh-6t-F08" secondAttribute="centerX" id="SgE-Dn-VZI"/>
-                            <constraint firstAttribute="bottom" secondItem="oTT-80-2of" secondAttribute="bottom" constant="10" id="nat-FE-lcO"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -71,17 +65,14 @@
             </constraints>
             <size key="customSize" width="305" height="214"/>
             <connections>
-                <outlet property="imgView" destination="fQZ-LR-KgK" id="KfF-u4-amD"/>
-                <outlet property="lblDesc" destination="Si1-VT-dQc" id="9qU-iv-8CE"/>
-                <outlet property="lblTitle" destination="GKc-h5-W38" id="yDG-gA-EML"/>
+                <outlet property="imgView" destination="fQZ-LR-KgK" id="9gs-ZB-AcK"/>
+                <outlet property="lblDesc" destination="Si1-VT-dQc" id="zh8-vF-APq"/>
+                <outlet property="lblTitle" destination="GKc-h5-W38" id="p6N-8q-qxu"/>
             </connections>
             <point key="canvasLocation" x="184.78260869565219" y="77.008928571428569"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="doctor_consultation_icon_home" width="78" height="78"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="bar_code_scan" width="64" height="64"/>
     </resources>
 </document>

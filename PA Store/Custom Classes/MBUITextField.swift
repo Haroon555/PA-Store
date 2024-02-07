@@ -139,19 +139,19 @@ class MBUITextField: SkyFloatingLabelTextField, UITextFieldDelegate {
 
         if isCreditCardTextField {
             guard let currentText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) else { return true }
-            textField.text = currentText.grouping(every: 4, with: " ")
+//            textField.text = currentText.grouping(every: 4, with: " ")
             return false
 
         } else if isExpirayDateTextField {
             guard let currentText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) else { return true }
-            textField.text = currentText.grouping(every: 2, with: "/")
+//            textField.text = currentText.grouping(every: 2, with: "/")
             return false
         
         } else if isSSNTextField {
             
             guard let currentText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) else { return true }
             if (textField.text?.count)! < 11 {
-                textField.text = currentText.grouping(every: 3, with: "-")
+//                textField.text = currentText.grouping(every: 3, with: "-")
                 
                 if textField.text?.count == 11 {
 

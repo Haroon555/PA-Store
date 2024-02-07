@@ -24,7 +24,7 @@ extension NSError {
 
         let okAction = MBAlertAction(title: "OK", style: .default) { (action) in
 
-            if self.localizedDescription == kErrorSessionExpired {
+            if self.localizedDescription == "kErrorSessionExpired" {
 //                let signInNavigationController = UINavigationController()
 //                let signinViewController = SignInViewController()
 //                SocketIOManager.sharedInstance.resetSocket()
@@ -93,7 +93,7 @@ extension NSError {
             })
         }
 
-        if self.localizedDescription == kErrorSessionExpired {
+        if self.localizedDescription == "kErrorSessionExpired" {
 
             let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
             DispatchQueue.main.asyncAfter(deadline: when) {
